@@ -12,6 +12,12 @@ public class GradeCalculator
         // Write code that reads from the grades.txt file and calculates the average grade
         while (sc.hasNext())  // as long as the Scanner has more lines to read from the file...
         {
+            int grade = sc.nextint();
+            int sum += grade;
+            count++;
+
+
+            double average = (double) sum / count;
 
         }
 

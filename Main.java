@@ -6,7 +6,7 @@ public class Main
 {
   public static void main(String[] args) throws IOException
   {
-    File file = new File(input.txt);  // this is your problem input as a File object
+    File file = new File("input.txt");  // this is your problem input as a File object
     Scanner sc = new Scanner(file);   // the Scanner object is now reading from the file object
 
 
@@ -17,15 +17,66 @@ public class Main
 
       // TODO: Write code that gets the turning direction from the line.  This should be "L" or "R"
 
+      int left;
+      int right; 
+      int value = 50;
+      int answer = 0;
+
+
+
+
+      String currentNumber = line.substring(1);
+      int number = Integer.parseInt(currentNumber);
+
+
+      if (line.substring(0,1) == "L")
+      {
+        // we substract
+        value -= number;
+
+          if (value < 0)
+          {
+          // restart back at 99 and count down
+          value = 99 + (value - number);
+          }
+
+          if (value == 0)
+          {
+            answer++;
+          }
+      }
+
+      else 
+      {
+      // we add
+      value += number;
+          if (value > 99)
+          {
+          // restart back at 0 and count up
+          value = 0 + (value - number);
+          }
+
+          if (value == 0)
+          {
+            answer++;
+          }
+      }
+
+
 
       // TODO: Write code that gets a substring of the line that contains only the numbers
       // For R802, this would be a String variable with the value "802"
 
+        
+
+      
+
 
       // TODO: Using the parseInt method from the Integer class, convert the String "802" into an int
-
+        
 
       // TODO: Now that you have the turning direction, and the turning amount, see if the turn results in a 0
+
 
 
     }
